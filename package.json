@@ -1,0 +1,17 @@
+{
+  "name": "Daq-Rpi",
+  "version": "1.0.0",
+  "main": "garmin_stream_process.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jim_m_58",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "bleno": "^0.3.5",
+    "node-fetch": "^2.6.1",
+    "python-shell": "^1.0.7",
+    "rpio": "^1.0.13"
+  }
+}
