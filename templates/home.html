@@ -25,15 +25,17 @@
     
     <button class="myButton" id="sitting">sitting</button>
     <button class="myButton" id="walking">walking</button>
+    <button class="myButton" id="stairs_up">stairs up</button>
+    <button class="myButton" id="stairs_down">stairs down</button>
     <button class="myButton" id="standing">standing</button>
     <button class="myButton" id="laying">laying</button>
     <button class="myButton" id="ohter">ohter</button>
     <div id="current"></div>
 
 <script>
-  let buttons = ["sitting","walking","standing","laying","ohter"];
+  let buttons = ["sitting","walking","stairs_up","stairs_down","standing","laying","ohter"];
   for(let i = 0; i<buttons.length; i++){
-    document.getElementById(`${buttons[i]}`).onclick = function() {httpGetAsync(`http://192.168.2.9:5000/post?button=${buttons[i]}`);
+    document.getElementById(`${buttons[i]}`).onclick = function() {httpGetAsync(`http://172.21.1.48:5000/post?button=${buttons[i]}`);
     var fieldNameElement = document.getElementById('current');
   fieldNameElement.innerHTML = `current activity ${buttons[i]}`;
   } 
