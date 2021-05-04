@@ -35,7 +35,7 @@
 <script>
   let buttons = ["sitting","walking","stairs_up","stairs_down","standing","laying","ohter"];
   for(let i = 0; i<buttons.length; i++){
-    document.getElementById(`${buttons[i]}`).onclick = function() {httpGetAsync(`http://172.21.1.48:5000/post?button=${buttons[i]}`);
+    document.getElementById(`${buttons[i]}`).onclick = function() {httpGetAsync(`http://172.21.1.130:5000/post?button=${buttons[i]}`);
     var fieldNameElement = document.getElementById('current');
   fieldNameElement.innerHTML = `current activity ${buttons[i]}`;
   } 
