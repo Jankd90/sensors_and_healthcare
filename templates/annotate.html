@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="static/semantic.min.css">
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="static/semantic.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.css">
+<script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.7/dist/semantic.min.js"></script>
+<style type="text/css">
+  body{
+    padding: 1rem;
+  }
+  .holder {
+      background-color: #4c474c;
+      background-image: -webkit-gradient(linear, left bottom, left top, from(#4c474c), to(#141414));
+      background-image: -o-linear-gradient(bottom, #4c474c 0%, #141414 100%);
+      background-image: linear-gradient(0deg, #4c474c 0%, #141414 100%);
+      border-radius: 50px;
+  }
+  [data-role="controls"] > button {
+      position: absolute;
+      bottom: 0;
+  right: 0;
+  margin: 4rem;
+      outline: none;
+      display: block;
+      border: none;
+      background-color: #D9AFD9;
+      background-image: -webkit-gradient(linear, left bottom, left top, from(#D9AFD9), to(#97D9E1));
+      background-image: -o-linear-gradient(bottom, #D9AFD9 0%, #97D9E1 100%);
+      background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      text-indent: -1000em;
+      cursor: pointer;
+      -webkit-box-shadow: 0px 5px 5px 2px rgba(0,0,0,0.3) inset, 
+          0px 0px 0px 30px #fff, 0px 0px 0px 35px #333;
+              box-shadow: 0px 5px 5px 2px rgba(0,0,0,0.3) inset, 
+          0px 0px 0px 20px #fff, 0px 0px 0px 25px #333;
+  }
+  [data-role="controls"] > button:hover {
+      background-color: #ee7bee;
+      background-image: -webkit-gradient(linear, left bottom, left top, from(#ee7bee), to(#6fe1f5));
+      background-image: -o-linear-gradient(bottom, #ee7bee 0%, #6fe1f5 100%);
+      background-image: linear-gradient(0deg, #ee7bee 0%, #6fe1f5 100%);
+  }
+  [data-role="controls"] > button[data-recording="true"] {
+      background-color: #ff2038;
+      background-image: -webkit-gradient(linear, left bottom, left top, from(#ff2038), to(#b30003));
+      background-image: -o-linear-gradient(bottom, #ff2038 0%, #b30003 100%);
+      background-image: linear-gradient(0deg, #ff2038 0%, #b30003 100%);
+  }
+  [data-role="recordings"] > .row {
+      width: auto;
+      height: auto;
+      padding: 10px;
+  }
+  [data-role="recordings"] > .row > audio {
+      outline: none;
+  }
+  [data-role="recordings"] > .row > a {
+      display: inline-block;
+      text-align: center;
+      font-size: 20px;
+      line-height: 50px;
+      vertical-align: middle;
+      width: 50px;
+      height: 50px;
+      border-radius: 20px;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: underline;
+      background-color: #0093E9;
+      background-image: -webkit-gradient(linear, left bottom, left top, from(#0093E9), to(#80D0C7));
+      background-image: -o-linear-gradient(bottom, #0093E9 0%, #80D0C7 100%);
+      background-image: linear-gradient(0deg, #0093E9 0%, #80D0C7 100%);
+      float: right;
+      margin-left: 20px;
+      cursor: pointer;
+  }
+  [data-role="recordings"] > .row > a:hover {
+      text-decoration: none;
+  }
+  [data-role="recordings"] > .row > a:active {
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#0093E9), to(#80D0C7));
+      background-image: -o-linear-gradient(top, #0093E9 0%, #80D0C7 100%);
+      background-image: linear-gradient(180deg, #0093E9 0%, #80D0C7 100%);
+  }
+</style>
+
+        <script src="https://stephino.github.io/dist/recorder.js"></script>
+        <script>
+          function changeColor(btn){
+            console.log(btn.value);
+            btn.classList.add("green");
+          }
+
+
+          function changeRange(btn) {
+            
+            let pers = ['0%','33.3333%','66.6667%','100%'];
+            let colors = [ 'red','orange','yellow','green'];
+            let val = btn.children[0].children[1].style.right;
+            console.log(val);
+            for (let i = 0; i < pers.length; i++) { 
+               btn.classList.remove(colors[i]);
+              if(val == pers[i]){console.log(pers[i])
+                btn.classList.add(colors[i]);
+              }
+            }}
+
+         
+          
+          function change(btn) {
+              if(!btn.value){
+                btn.value = 0;
+              }
+              console.log(btn.value);
+              
+              if (btn.value == 0) {
+                  //property.style.backgroundColor = "#FFFFFF"
+                  btn.classList.add("active");
+              btn.classList.add("green");
+              btn.value = 1;
+              }
+              else {
+                  //property.style.backgroundColor = "#7FFF00"
+                  btn.classList.remove("active");
+              btn.classList.remove("green");
+              btn.value = 0;
+              }
+          }
+      </script>
+
+        <script>
+          function sendData(blob){
+              
+              
+              
+              var oReq = new XMLHttpRequest();
+              var url = `https://172.21.1.130:8100/post`
+              oReq.open("POST", url, true);
+              oReq.onload = function (oEvent) {
+              // Uploaded.
+              };
+              oReq.send(blob);
+
+          }
+          jQuery(document).ready(function () {
+              var $ = jQuery;
+              var myRecorder = {
+                  objects: {
+                      context: null,
+                      stream: null,
+                      recorder: null
+                  },
+                  init: function () {
+                      if (null === myRecorder.objects.context) {
+                          myRecorder.objects.context = new (
+                                  window.AudioContext || window.webkitAudioContext
+                                  );
+                      }
+                  },
+                  start: function () {
+                      var options = {audio: true, video: false};
+                      navigator.mediaDevices.getUserMedia(options).then(function (stream) {
+                          myRecorder.objects.stream = stream;
+                          myRecorder.objects.recorder = new Recorder(
+                                  myRecorder.objects.context.createMediaStreamSource(stream),
+                                  {numChannels: 1}
+                          );
+                          myRecorder.objects.recorder.record();
+                      }).catch(function (err) {});
+                  },
+                  stop: function (listObject) {
+                      if (null !== myRecorder.objects.stream) {
+                          myRecorder.objects.stream.getAudioTracks()[0].stop();
+                      }
+                      if (null !== myRecorder.objects.recorder) {
+                          myRecorder.objects.recorder.stop();
+
+                          // Validate object
+                          if (null !== listObject
+                                  && 'object' === typeof listObject
+                                  && listObject.length > 0) {
+                              // Export the WAV file
+                              myRecorder.objects.recorder.exportWAV(function (blob) {
+                                  var url = (window.URL || window.webkitURL)
+                                          .createObjectURL(blob);
+                                          sendData(blob);
+                                  
+                              });
+                          }
+                      }
+                  }
+              };
+
+              // Prepare the recordings list
+              var listObject = $('[data-role="recordings"]');
+
+              // Prepare the record button
+              $('[data-role="controls"] > button').click(function () {
+                  // Initialize the recorder
+                  myRecorder.init();
+
+                  // Get the button state 
+                  var buttonState = !!$(this).attr('data-recording');
+
+                  // Toggle
+                  if (!buttonState) {
+                      $(this).attr('data-recording', 'true');
+                      myRecorder.start();
+                  } else {
+                      $(this).attr('data-recording', '');
+                      myRecorder.stop(listObject);
+                  }
+              });
+          });
+
+          
+      </script>
+
+
+</head>
+
+<body>
+
+  <div class="ui two column centered grid">
+    
+    <div class="column">
+      
+      <div class="ui labeled ticked slider" value="0" onclick="changeRange(this)"></div>
+      <div>Spanningsniveau</div>
+    </div>
+  </div>
+
+  <button class="ui button big" value="0" onclick="change(this)">Vote</button>
+  <div class="ui grid">
+
+
+    <div class="four wide column">
+      <div class="ui vertical fluid accordion menu">
+        <div class="item">
+          <a class="active title">
+            <i class="dropdown icon"></i>
+            Activiteit (ADL)
+          </a>
+          <div class="active content">
+            <div class="ui form">
+              <div class="grouped fields">
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="small">
+                    <label>Eten</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="medium">
+                    <label>Drinken</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="large">
+                    <label>Slapen</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="x-large">
+                    <label>Sociale interactie</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+    <div class="four wide column">
+          <div class="ui vertical fluid accordion menu">
+            <div class="item">
+              <a class="active title">
+                <i class="dropdown icon"></i>
+                Locatie
+              </a>
+              <div class="active content">
+                <div class="ui form">
+                  <div class="grouped fields">
+                    <div class="field">
+                      <div class="ui radio checkbox">
+                        <input type="radio" name="locatie" value="w">
+                        <label>Woonkamer</label>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <div class="ui radio checkbox">
+                        <input type="radio" name="locatie" value="g">
+                        <label>Gang</label>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <div class="ui radio checkbox">
+                        <input type="radio" name="locatie" value="b">
+                        <label>Buiten</label>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <div class="ui radio checkbox">
+                        <input type="radio" name="locatie" value="s">
+                        <label>Slaapkamer</label>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <div class="ui radio checkbox">
+                        <input type="radio" name="locatie" value="b">
+                        <label>Badkamer</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+        </div>
+    <div class="four wide column">
+      <div class="ui vertical fluid accordion menu">
+        <div class="item">
+          <a class="active title">
+            <i class="dropdown icon"></i>
+            Gebeurtenis
+          </a>
+          <div class="active content">
+            <div class="ui form">
+              <div class="grouped fields">
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="small">
+                    <label>Iemand komt binnen</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="medium">
+                    <label>Iemand gaat weg</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="large">
+                    <label>Tv aan</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="large">
+                    <label>Tv uit</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="x-large">
+                    <label>Hard geluid</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="x-large">
+                    <label>gedrag andere bewoner veranderd</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+    <div class="four wide column">
+      <div class="ui vertical fluid accordion menu">
+        <div class="item">
+          <a class="active title">
+            <i class="dropdown icon"></i>
+            Actie
+          </a>
+          <div class="active content">
+            <div class="ui form">
+              <div class="grouped fields">
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="small">
+                    <label>Zitten</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="medium">
+                    <label>Staan</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="large">
+                    <label>Liggen</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="x-large">
+                    <label>Lopen</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="x-large">
+                    <label>Traplopen</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+  
+    <div class="four wide column">
+      <div class="ui vertical fluid accordion menu">
+        <div class="item">
+          <a class="active title">
+            <i class="dropdown icon"></i>
+            Beweging
+          </a>
+          <div class="active content">
+            <div class="ui form">
+              <div class="grouped fields">
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="small">
+                    <label>Klappen</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="medium">
+                    <label>Handen wringen</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="large">
+                    <label>Tikken</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="x-large">
+                    <label>Aan/uitkleden</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="x-large">
+                    <label>Krabben</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="four wide column">
+      <div class="ui vertical fluid accordion menu">
+        <div class="item">
+          <a class="active title">
+            <i class="dropdown icon"></i>
+            Geluid
+          </a>
+          <div class="active content">
+            <div class="ui form">
+              <div class="grouped fields">
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="small">
+                    <label>Roepen</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="medium">
+                    <label>Schreeuwen</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="large">
+                    <label>Lachen</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="x-large">
+                    <label>Zingen</label>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="ui radio checkbox">
+                    <input type="radio" name="size" value="x-large">
+                    <label>Praten</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+  </div>
+
+  
+
+  <div data-role="controls">
+    <button>Record</button>
+</div>
+<div data-role="recordings"></div>
+
+</body>
+
+<script>$('.ui.accordion')
+  .accordion()
+;
+$('.ui.slider')
+  .slider({
+    min: 0,
+    max: 3,
+    start: 0,
+    step: 1
+  })
+;
+
+</script>
+

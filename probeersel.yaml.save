@@ -1,0 +1,51 @@
+esphome:
+  name: esp32envir
+  platform: ESP32
+  board: nodemcu-32s
+
+wifi:
+  ssid: "HANZE-IN01"
+  password: "Aux359MHZ7"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esp32Envir Fallback Hotspot"
+    password: "7LsBAVsEmDol"
+
+captive_portal:
+
+# Enable logging
+logger:
+ level: DEBUG
+
+# Enable Home Assistant API
+api:
+  password: "environ"
+
+ota:
+  safe_mode: True
+  password: "environ"
+
+i2c:
+  sda: 21
+  scl: 22
+  scan: True
+  id: bus_a
+
+binary_sensor:
+  - platform: gpio
+    name: "Living Room Window"
+    pin:
+      number: 16
+      inverted: True
+      mode: INPUT_PULLUP
+	  
+sensor:
+- platform: custom
+  lambda: |-
+    auto my_sensor = new MyCustomSensor();
+    App.register_component(my_sensor);
+    return {my_sensor};
+  sensors:
+    name: "My Custom Sensor"
+	  

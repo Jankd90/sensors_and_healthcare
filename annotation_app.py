@@ -2,6 +2,10 @@ import time
 from datetime import datetime
 from flask import Flask, escape, request, render_template
 from influxdb import InfluxDBClient
+#from OpenSSL import SSL
+#context = SSL.Context(SSL.PROTOCOL_TLSv1_2)
+#context.use_privatekey_file('server.key')
+#context.use_certificate_file('server.crt') 
 
 app = Flask(__name__)
 
@@ -9,6 +13,17 @@ app = Flask(__name__)
 def hello():
     name = request.args.get("name", "World")
     return render_template("home.html")
+
+@app.route('/record')
+def record():
+    #name = request.args.get("name", "World")
+    return render_template("record.html")
+
+@app.route('/annotate')
+def annotate():
+    #name = request.args.get("name", "World")
+    return render_template("annotate.html")
+
 
 @app.route('/post')
 def post():
@@ -36,4 +51,4 @@ def post():
     return f'Hello!'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(ssl_context='adhoc', host='0.0.0.0', port=5000)
