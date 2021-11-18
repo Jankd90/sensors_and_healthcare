@@ -6,7 +6,7 @@ import keyboard
 global addr_var
 global delegate_global
 global perif_global
-
+#https://simonhearne.com/2020/pi-influx-grafana/
 addr_var = ['12:a8:9b:a4:61:22','08:1d:54:03:89:70']
 CHARACTERISTIC_UUID = "19b10001-e8f2-537e-4f6c-d104768a1214"
 
@@ -41,12 +41,12 @@ class MyDelegate(btle.DefaultDelegate):
     
 def perif_loop(perif,indx,char):
     while True:
-        print(char.read())
+        print(char.read(), 'ab')
+        #print(char.read(), 'ac')
         try:
             
-            #        time.sleep(1.0)
 
-            if perif.waitForNotifications(0.01):
+            if perif.waitForNotifications(1.0):
                 print("waiting for notifications...")
                 continue
         except:
