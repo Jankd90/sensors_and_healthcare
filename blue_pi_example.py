@@ -15,7 +15,8 @@ from bluepy import btle
 import time
 
 #Have to match with Peripheral
-MAC = "08:1d:54:03:89:70"
+MAC2 = "12:a8:9b:a4:61:22"
+MAC ="08:1d:54:03:89:70"
 SERVICE_UUID = "19b10000-e8f2-537e-4f6c-d104768a1214"
 CHARACTERISTIC_UUID = "19b10001-e8f2-537e-4f6c-d104768a1214"
 
