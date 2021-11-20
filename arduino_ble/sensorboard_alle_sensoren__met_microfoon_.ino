@@ -1,4 +1,3 @@
-
 /*
   Button LED
   This example creates a BLE peripheral with service that contains a
@@ -134,20 +133,17 @@ void loop() {
   Serial.println(g);
   Serial.print("b = ");
   Serial.println(b);
+  Serial.print("dB =");
+  Serial.println(db);
+  dbaCharacteristic.writeValue(db);
   tempCharacteristic.writeValue(temperature);
   humCharacteristic.writeValue(humidity);
   pressCharacteristic.writeValue(pressure);
   colCharacteristic.writeValue(r);
   colCharacteristic.writeValue(g);
   colCharacteristic.writeValue(b);
-  delay(500);
-}
-
-void takeReading()
-{
-  Serial.print("dB =");
-  Serial.println(db);
   dbaCharacteristic.writeValue(db);
+  delay(500);
 }
 
 void onPDMdata() {
