@@ -28,14 +28,14 @@ BLEService sensorService("19B10010-E8F2-537E-4F6C-D104768A1214"); // create serv
 BLEIntCharacteristic tempCharacteristic("19B10012-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //temperature
 BLEIntCharacteristic humCharacteristic("19B10013-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //humidity
 BLEIntCharacteristic pressCharacteristic("19B10014-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //pressure
-BLEIntCharacteristic colCharacteristic("19B10015-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //colour (RGB)
+BLEIntCharacteristic colCharacteristic("19B10015-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //colour (RGB & clear)
 BLEIntCharacteristic dbaCharacteristic("19B10016-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //sound (DB(A))
 
 //declarations for sensor variables
 int temperature;
 int humidity;
 int pressure;
-int r, g, b;
+int r, g, b, c;
 
 // buffer to read audio samples into, each sample is 16-bits
 short sampleBuffer[256];
@@ -120,7 +120,7 @@ void loop() {
   temperature = (int)(HTS.readTemperature()*100);
   humidity = (int)(HTS.readHumidity()*100);
   pressure = (int)(BARO.readPressure()*100);
-  r, g, b = (int)( APDS.readColor(r, g, b)*100);
+  r, g, b = (int)( APDS.readColor(r, g, b, c)*100);
   Serial.print("Temperature is :");
   Serial.println(temperature);
   Serial.print("Humidity is :");
@@ -133,6 +133,8 @@ void loop() {
   Serial.println(g);
   Serial.print("b = ");
   Serial.println(b);
+  Serial.print("clear (lux) = ");
+  Serial.println(c);
   Serial.print("dB =");
   Serial.println(db);
   dbaCharacteristic.writeValue(db);
@@ -142,6 +144,7 @@ void loop() {
   colCharacteristic.writeValue(r);
   colCharacteristic.writeValue(g);
   colCharacteristic.writeValue(b);
+  colCharacteristic.writeValue(c);
   dbaCharacteristic.writeValue(db);
   delay(500);
 }
