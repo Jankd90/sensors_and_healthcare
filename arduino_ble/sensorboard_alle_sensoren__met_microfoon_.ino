@@ -127,11 +127,11 @@ void loop() {
   Serial.println(humidity);
   Serial.print("pressure is :");
   Serial.println(pressure);
-  Serial.print("r = ");
+  Serial.print("rood = ");
   Serial.println(r);
-  Serial.print("g = ");
+  Serial.print("groen = ");
   Serial.println(g);
-  Serial.print("b = ");
+  Serial.print("blauw = ");
   Serial.println(b);
   Serial.print("clear (lux) = ");
   Serial.println(c);
