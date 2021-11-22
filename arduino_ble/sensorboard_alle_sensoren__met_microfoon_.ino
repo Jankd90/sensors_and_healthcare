@@ -137,7 +137,7 @@ void loop() {
   Serial.println(c);
   Serial.print("dB =");
   Serial.println(db);
-  Serial.print("");
+  Serial.println();
   tempCharacteristic.writeValue(temperature);
   humCharacteristic.writeValue(humidity);
   pressCharacteristic.writeValue(pressure);
