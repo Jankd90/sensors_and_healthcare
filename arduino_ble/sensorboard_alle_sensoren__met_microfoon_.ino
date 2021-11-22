@@ -120,7 +120,7 @@ void loop() {
   temperature = (int)(HTS.readTemperature()*100);
   humidity = (int)(HTS.readHumidity()*100);
   pressure = (int)(BARO.readPressure()*100);
-  r, g, b = (int)( APDS.readColor(r, g, b, c)*100);
+  r, g, b, c = (int)( APDS.readColor(r, g, b, c)*100);
   Serial.print("Temperature is :");
   Serial.println(temperature);
   Serial.print("Humidity is :");
