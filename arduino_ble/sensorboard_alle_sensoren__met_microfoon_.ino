@@ -37,7 +37,6 @@ int temperature;
 int humidity;
 int pressure;
 int r, g, b, c;
-int c;
 
 // buffer to read audio samples into, each sample is 16-bits
 short sampleBuffer[256];
@@ -144,8 +143,7 @@ void loop() {
   Serial.println(c);
   Serial.print("dB =");
   Serial.println(db);
-  Serial.print("");
-  dbaCharacteristic.writeValue(db);
+  Serial.print();
   tempCharacteristic.writeValue(temperature);
   humCharacteristic.writeValue(humidity);
   pressCharacteristic.writeValue(pressure);
