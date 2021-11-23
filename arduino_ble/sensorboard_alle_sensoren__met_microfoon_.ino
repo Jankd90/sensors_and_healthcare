@@ -144,7 +144,6 @@ void loop() {
   Serial.print("dB =");
   Serial.println(db);
   Serial.print("");
-  dbaCharacteristic.writeValue(db);
   tempCharacteristic.writeValue(temperature);
   humCharacteristic.writeValue(humidity);
   pressCharacteristic.writeValue(pressure);
