@@ -18,6 +18,7 @@
 #include <Arduino_LPS22HB.h>
 #include <Arduino_APDS9960.h>
 #include <PDM.h>
+#include <arduinoFFT.h>
 
 
 
@@ -36,6 +37,7 @@ int temperature;
 int humidity;
 int pressure;
 int r, g, b, c;
+int c;
 
 // buffer to read audio samples into, each sample is 16-bits
 short sampleBuffer[256];
@@ -117,6 +119,11 @@ void loop() {
      db = map(maxVal*2,0,1500,0,90); 
      Serial.println(db);
 
+  // check if a color reading is available
+  while (! APDS.colorAvailable()) {
+    delay(5);
+  }
+
   temperature = (int)(HTS.readTemperature()*100);
   humidity = (int)(HTS.readHumidity()*100);
   pressure = (int)(BARO.readPressure()*100);
@@ -127,17 +134,18 @@ void loop() {
   Serial.println(humidity);
   Serial.print("pressure is :");
   Serial.println(pressure);
-  Serial.print("rood = ");
+  Serial.print("red = ");
   Serial.println(r);
-  Serial.print("groen = ");
+  Serial.print("green = ");
   Serial.println(g);
-  Serial.print("blauw = ");
+  Serial.print("blue = ");
   Serial.println(b);
   Serial.print("clear (lux) = ");
   Serial.println(c);
   Serial.print("dB =");
   Serial.println(db);
-  Serial.println();
+  Serial.print("");
+  dbaCharacteristic.writeValue(db);
   tempCharacteristic.writeValue(temperature);
   humCharacteristic.writeValue(humidity);
   pressCharacteristic.writeValue(pressure);
