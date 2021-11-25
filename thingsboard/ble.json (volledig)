@@ -77,16 +77,23 @@
                     "byteTo": 13
                 },
                 {
-                    "key": "RGB kleuren 35-1",
+                    "key": "rood & groen 35-1",
                     "method": "notify",
                     "characteristicUUID": "19B10015-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "geluidssterkte 35-1",
+                    "key": "blauw & lux 35-1",
                     "method": "notify",
                     "characteristicUUID": "19B10016-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "geluidssterkte 35-1",
+                    "method": "notify",
+                    "characteristicUUID": "19B10017-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
@@ -94,35 +101,42 @@
 
                     "key": "temperatuur 35-2",
                     "method": "notify",
-                    "characteristicUUID": "19B10017-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10018-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 2,
                     "byteTo": 6
                 },
                 {
                     "key": "luchtvochtigheid 35-2",
                     "method": "notify",
-                    "characteristicUUID": "19B10018-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10019-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
                     "key": "luchtdruk 35-2",
                     "method": "notify",
-                    "characteristicUUID": "19B10019-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10020-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "RGB kleuren 35-2",
+                    "key": "rood & groen 35-2",
                     "method": "notify",
-                    "characteristicUUID": "19B10020-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10021-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "blauw & lux 35-2",
+                    "method": "notify",
+                    "characteristicUUID": "19B10022-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
                     "key": "geluidssterkte 35-2",
                     "method": "notify",
-                    "characteristicUUID": "19B10021-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10023-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
@@ -130,35 +144,42 @@
 
                     "key": "temperatuur 35-3",
                     "method": "notify",
-                    "characteristicUUID": "19B10022-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10024-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 2,
                     "byteTo": 6
                 },
                 {
                     "key": "luchtvochtigheid 35-3",
                     "method": "notify",
-                    "characteristicUUID": "19B10023-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10025-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
                     "key": "luchtdruk 35-3",
                     "method": "notify",
-                    "characteristicUUID": "19B10024-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10026-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "RGB kleuren 35-3",
+                    "key": "rood & groen 35-3",
                     "method": "notify",
-                    "characteristicUUID": "19B10025-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10027-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "blauw & lux 35-3",
+                    "method": "notify",
+                    "characteristicUUID": "19B10028-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
                     "key": "geluidssterkte 35-3",
                     "method": "notify",
-                    "characteristicUUID": "19B10026-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10029-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
@@ -166,35 +187,42 @@
 
                     "key": "temperatuur 35-4",
                     "method": "notify",
-                    "characteristicUUID": "19B10027-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10030-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 2,
                     "byteTo": 6
                 },
                 {
                     "key": "luchtvochtigheid 35-4",
                     "method": "notify",
-                    "characteristicUUID": "19B10028-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10031-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
                     "key": "luchtdruk 35-4",
                     "method": "notify",
-                    "characteristicUUID": "19B10029-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10032-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "RGB kleuren 35-4",
+                    "key": "rood & groen 35-4",
                     "method": "notify",
-                    "characteristicUUID": "19B10030-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10033-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "blauw & lux 35-4",
+                    "method": "notify",
+                    "characteristicUUID": "19B10034-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
                     "key": "geluidssterkte 35-4",
                     "method": "notify",
-                    "characteristicUUID": "19B10031-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10035-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
@@ -202,69 +230,40 @@
 
                     "key": "temperatuur 36-1",
                     "method": "notify",
-                    "characteristicUUID": "19B10032-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10036-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 2,
                     "byteTo": 6
                 },
                 {
                     "key": "luchtvochtigheid 36-1",
                     "method": "notify",
-                    "characteristicUUID": "19B10033-E8F2-537E-4F6C-D104768A1214",
+                    "characteristicUUID": "19B10037-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
                     "key": "luchtdruk 36-1",
                     "method": "notify",
-                    "characteristicUUID": "19B10034-E8F2-537E-4F6C-D104768A1214",
-                    "byteFrom": 9,
-                    "byteTo": 13
-                },
-                {
-                    "key": "RGB kleuren 36-1",
-                    "method": "notify",
-                    "characteristicUUID": "19B10035-E8F2-537E-4F6C-D104768A1214",
-                    "byteFrom": 9,
-                    "byteTo": 13
-                },
-                {
-                    "key": "geluidssterkte 36-1",
-                    "method": "notify",
-                    "characteristicUUID": "19B10036-E8F2-537E-4F6C-D104768A1214",
-                    "byteFrom": 9,
-                    "byteTo": 13
-                },
-                {
-
-                    "key": "temperatuur 36-2",
-                    "method": "notify",
-                    "characteristicUUID": "19B10037-E8F2-537E-4F6C-D104768A1214",
-                    "byteFrom": 2,
-                    "byteTo": 6
-                },
-                {
-                    "key": "luchtvochtigheid 36-2",
-                    "method": "notify",
                     "characteristicUUID": "19B10038-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "luchtdruk 36-2",
+                    "key": "rood & groen 36-1",
                     "method": "notify",
                     "characteristicUUID": "19B10039-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "RGB kleuren 36-2",
+                    "key": "blauw & lux 36-1",
                     "method": "notify",
                     "characteristicUUID": "19B10040-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "geluidssterkte 36-2",
+                    "key": "geluidssterkte 36-1",
                     "method": "notify",
                     "characteristicUUID": "19B10041-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
@@ -272,133 +271,204 @@
                 },
                 {
 
-                    "key": "temperatuur 36-3",
+                    "key": "temperatuur 36-2",
                     "method": "notify",
                     "characteristicUUID": "19B10042-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 2,
                     "byteTo": 6
                 },
                 {
-                    "key": "luchtvochtigheid 36-3",
+                    "key": "luchtvochtigheid 36-2",
                     "method": "notify",
                     "characteristicUUID": "19B10043-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "luchtdruk 36-3",
+                    "key": "luchtdruk 36-2",
                     "method": "notify",
                     "characteristicUUID": "19B10044-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "RGB kleuren 36-3",
+                    "key": "rood & groen 36-2",
                     "method": "notify",
                     "characteristicUUID": "19B10045-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "geluidssterkte 36-3",
+                    "key": "blauw & lux 36-2",
                     "method": "notify",
                     "characteristicUUID": "19B10046-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "temperatuur 36-4",
+                    "key": "geluidssterkte 36-2",
                     "method": "notify",
                     "characteristicUUID": "19B10047-E8F2-537E-4F6C-D104768A1214",
-                    "byteFrom": 2,
-                    "byteTo": 6
-                },
-                {
-                    "key": "luchtvochtigheid 36-4",
-                    "method": "notify",
-                    "characteristicUUID": "19B10048-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "luchtdruk 36-4",
+
+                    "key": "temperatuur 36-3",
+                    "method": "notify",
+                    "characteristicUUID": "19B10048-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 2,
+                    "byteTo": 6
+                },
+                {
+                    "key": "luchtvochtigheid 36-3",
                     "method": "notify",
                     "characteristicUUID": "19B10049-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "RGB kleuren 36-4",
+                    "key": "luchtdruk 36-3",
                     "method": "notify",
                     "characteristicUUID": "19B10050-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "geluidssterkte 36-4",
+                    "key": "rood & groen 36-3",
                     "method": "notify",
                     "characteristicUUID": "19B10051-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "temperatuur 37-1",
+                    "key": "blauw & lux 36-3",
                     "method": "notify",
                     "characteristicUUID": "19B10052-E8F2-537E-4F6C-D104768A1214",
-                    "byteFrom": 2,
-                    "byteTo": 6
+                    "byteFrom": 9,
+                    "byteTo": 13
                 },
                 {
-                    "key": "luchtvochtigheid 37-1",
+                    "key": "geluidssterkte 36-3",
                     "method": "notify",
                     "characteristicUUID": "19B10053-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "luchtdruk 37-1",
+                    "key": "temperatuur 36-4",
                     "method": "notify",
                     "characteristicUUID": "19B10054-E8F2-537E-4F6C-D104768A1214",
-                    "byteFrom": 9,
-                    "byteTo": 13
+                    "byteFrom": 2,
+                    "byteTo": 6
                 },
                 {
-                    "key": "RGB kleuren 37-1",
+                    "key": "luchtvochtigheid 36-4",
                     "method": "notify",
                     "characteristicUUID": "19B10055-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "geluidssterkte 37-1",
+                    "key": "luchtdruk 36-4",
                     "method": "notify",
                     "characteristicUUID": "19B10056-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "temperatuur 37-2",
+                    "key": "rood & groen 36-4",
                     "method": "notify",
                     "characteristicUUID": "19B10057-E8F2-537E-4F6C-D104768A1214",
-                    "byteFrom": 2,
-                    "byteTo": 6
+                    "byteFrom": 9,
+                    "byteTo": 13
                 },
                 {
-                    "key": "luchtvochtigheid 37-2",
+                    "key": "blauw & lux 36-4",
                     "method": "notify",
                     "characteristicUUID": "19B10058-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "luchtdruk 37-2",
+                    "key": "geluidssterkte 36-4",
                     "method": "notify",
                     "characteristicUUID": "19B10059-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "RGB kleuren 37-2",
+                    "key": "temperatuur 37-1",
+                    "method": "notify",
+                    "characteristicUUID": "19B10060-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 2,
+                    "byteTo": 6
+                },
+                {
+                    "key": "luchtvochtigheid 37-1",
+                    "method": "notify",
+                    "characteristicUUID": "19B10061-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "luchtdruk 37-1",
+                    "method": "notify",
+                    "characteristicUUID": "19B10062-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "rood & groen 37-1",
+                    "method": "notify",
+                    "characteristicUUID": "19B10063-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "blauw &  lux 37-1",
+                    "method": "notify",
+                    "characteristicUUID": "19B10064-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "geluidssterkte 37-1",
+                    "method": "notify",
+                    "characteristicUUID": "19B10065-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "temperatuur 37-2",
+                    "method": "notify",
+                    "characteristicUUID": "19B10066-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 2,
+                    "byteTo": 6
+                },
+                {
+                    "key": "luchtvochtigheid 37-2",
+                    "method": "notify",
+                    "characteristicUUID": "19B10067-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "luchtdruk 37-2",
+                    "method": "notify",
+                    "characteristicUUID": "19B10068-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "rood & groen 37-2",
+                    "method": "notify",
+                    "characteristicUUID": "19B10020-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "blauw & lux 37-2",
                     "method": "notify",
                     "characteristicUUID": "19B10060-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
@@ -433,7 +503,14 @@
                     "byteTo": 13
                 },
                 {
-                    "key": "RGB kleuren 37-3",
+                    "key": "rood & groen 37-3",
+                    "method": "notify",
+                    "characteristicUUID": "19B10020-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "blauw & lux 37-3",
                     "method": "notify",
                     "characteristicUUID": "19B10065-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
@@ -468,16 +545,23 @@
                     "byteTo": 13
                 },
                 {
-                    "key": "RGB kleuren 37-4",
+                    "key": "rood & groen 37-4",
                     "method": "notify",
                     "characteristicUUID": "19B10070-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 },
                 {
-                    "key": "geluidssterkte 37-4",
+                    "key": "blauw & lux 37-4",
                     "method": "notify",
                     "characteristicUUID": "19B10071-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "geluidssterkte 37-4",
+                    "method": "notify",
+                    "characteristicUUID": "19B10072-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 }
