@@ -1,0 +1,84 @@
+""2021-11-10 12:51:21" - |ERROR| - [tb_gateway_service.py] - tb_gateway_service - _load_connectors - 329 - Error on loading connector:"
+""2021-11-10 12:51:21" - |ERROR| - [tb_gateway_service.py] - tb_gateway_service - _load_connectors - 330 - Expecting ',' delimiter or ']': line 28 column 17 (char 895)"
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/thingsboard_gateway/gateway/tb_gateway_service.py", line 319, in _load_connectors
+    connector_conf = load(conf_file)
+  File "/usr/lib/python3/dist-packages/simplejson/__init__.py", line 461, in load
+    use_decimal=use_decimal, **kw)
+  File "/usr/lib/python3/dist-packages/simplejson/__init__.py", line 518, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3/dist-packages/simplejson/decoder.py", line 370, in decode
+    obj, end = self.raw_decode(s)
+  File "/usr/lib/python3/dist-packages/simplejson/decoder.py", line 400, in raw_decode
+    return self.scan_once(s, idx=_w(s, idx).end())
+simplejson.errors.JSONDecodeError: Expecting ',' delimiter or ']': line 28 column 17 (char 895)
+""2021-11-10 14:36:50" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __stop_gateway - 238 - Stopping..."
+""2021-11-10 14:36:50" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __stop_gateway - 241 - The gateway has been stopped."
+""2021-11-10 14:38:04" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 76 - Gateway starting..."
+""2021-11-10 14:38:04" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 81 - ThingsBoard IoT gateway version: 2.8"
+""2021-11-10 14:38:04" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import MqttConnector from /usr/lib/python3/dist-packages/thingsboard_gateway/connectors/mqtt."
+""2021-11-10 14:38:04" - |ERROR| - [tb_gateway_service.py] - tb_gateway_service - _load_connectors - 329 - Error on loading connector:"
+""2021-11-10 14:38:04" - |ERROR| - [tb_gateway_service.py] - tb_gateway_service - _load_connectors - 330 - Expecting ',' delimiter or ']': line 28 column 17 (char 895)"
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/thingsboard_gateway/gateway/tb_gateway_service.py", line 319, in _load_connectors
+    connector_conf = load(conf_file)
+  File "/usr/lib/python3/dist-packages/simplejson/__init__.py", line 461, in load
+    use_decimal=use_decimal, **kw)
+  File "/usr/lib/python3/dist-packages/simplejson/__init__.py", line 518, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3/dist-packages/simplejson/decoder.py", line 370, in decode
+    obj, end = self.raw_decode(s)
+  File "/usr/lib/python3/dist-packages/simplejson/decoder.py", line 400, in raw_decode
+    return self.scan_once(s, idx=_w(s, idx).end())
+simplejson.errors.JSONDecodeError: Expecting ',' delimiter or ']': line 28 column 17 (char 895)
+""2021-11-10 14:38:04" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 147 - Gateway started."
+""2021-11-10 14:38:04" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import JsonMqttUplinkConverter from /usr/lib/python3/dist-packages/thingsboard_gateway/connectors/mqtt."
+""2021-11-10 14:38:04" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import CustomMqttUplinkConverter from /var/lib/thingsboard_gateway/extensions/mqtt."
+""2021-11-10 14:38:55" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __stop_gateway - 238 - Stopping..."
+""2021-11-10 14:38:56" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __stop_gateway - 241 - The gateway has been stopped."
+""2021-11-10 14:50:11" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 76 - Gateway starting..."
+""2021-11-10 14:50:11" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 81 - ThingsBoard IoT gateway version: 2.8"
+""2021-11-10 14:50:11" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import MqttConnector from /usr/lib/python3/dist-packages/thingsboard_gateway/connectors/mqtt."
+""2021-11-10 14:50:11" - |WARNING| - [tb_gateway_service.py] - tb_gateway_service - _connect_with_connectors - 352 - Connector implementation not found for BLE Connector"
+""2021-11-10 14:50:11" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 147 - Gateway started."
+""2021-11-10 14:50:11" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import JsonMqttUplinkConverter from /usr/lib/python3/dist-packages/thingsboard_gateway/connectors/mqtt."
+""2021-11-10 14:50:11" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import CustomMqttUplinkConverter from /var/lib/thingsboard_gateway/extensions/mqtt."
+""2021-11-10 14:56:13" - |WARNING| - [tb_gateway_service.py] - tb_gateway_service - _connect_with_connectors - 352 - Connector implementation not found for BLE Connector"
+""2021-11-10 14:56:16" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __stop_gateway - 238 - Stopping..."
+""2021-11-10 14:56:16" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __stop_gateway - 241 - The gateway has been stopped."
+""2021-11-10 14:56:21" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 76 - Gateway starting..."
+""2021-11-10 14:56:21" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 81 - ThingsBoard IoT gateway version: 2.8"
+""2021-11-10 14:56:21" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import MqttConnector from /usr/lib/python3/dist-packages/thingsboard_gateway/connectors/mqtt."
+""2021-11-10 14:56:22" - |WARNING| - [tb_gateway_service.py] - tb_gateway_service - _connect_with_connectors - 352 - Connector implementation not found for BLE Connector"
+""2021-11-10 14:56:22" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 147 - Gateway started."
+""2021-11-10 14:56:22" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import JsonMqttUplinkConverter from /usr/lib/python3/dist-packages/thingsboard_gateway/connectors/mqtt."
+""2021-11-10 14:56:22" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import CustomMqttUplinkConverter from /var/lib/thingsboard_gateway/extensions/mqtt."
+""2021-11-10 14:56:54" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __stop_gateway - 238 - Stopping..."
+""2021-11-10 14:56:54" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __stop_gateway - 241 - The gateway has been stopped."
+""2021-11-10 14:58:43" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 76 - Gateway starting..."
+""2021-11-10 14:58:43" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 81 - ThingsBoard IoT gateway version: 2.8"
+""2021-11-10 14:58:43" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import MqttConnector from /usr/lib/python3/dist-packages/thingsboard_gateway/connectors/mqtt."
+""2021-11-10 14:58:43" - |WARNING| - [tb_gateway_service.py] - tb_gateway_service - _connect_with_connectors - 352 - Connector implementation not found for BLE Connector"
+""2021-11-10 14:58:43" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 147 - Gateway started."
+""2021-11-10 14:58:43" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import JsonMqttUplinkConverter from /usr/lib/python3/dist-packages/thingsboard_gateway/connectors/mqtt."
+""2021-11-10 14:58:43" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import CustomMqttUplinkConverter from /var/lib/thingsboard_gateway/extensions/mqtt."
+""2021-11-10 14:59:48" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __stop_gateway - 238 - Stopping..."
+""2021-11-10 14:59:49" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __stop_gateway - 241 - The gateway has been stopped."
+""2021-11-10 17:04:35" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 76 - Gateway starting..."
+""2021-11-10 17:04:35" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 81 - ThingsBoard IoT gateway version: 2.8"
+""2021-11-10 17:04:35" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import MqttConnector from /usr/lib/python3/dist-packages/thingsboard_gateway/connectors/mqtt."
+""2021-11-10 17:04:36" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import BLEConnector from /usr/lib/python3/dist-packages/thingsboard_gateway/connectors/ble."
+""2021-11-10 17:04:36" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 147 - Gateway started."
+""2021-11-10 17:04:36" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import JsonMqttUplinkConverter from /usr/lib/python3/dist-packages/thingsboard_gateway/connectors/mqtt."
+""2021-11-10 17:04:36" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import CustomMqttUplinkConverter from /var/lib/thingsboard_gateway/extensions/mqtt."
+""2021-11-10 17:09:06" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __stop_gateway - 238 - Stopping..."
+""2021-11-10 17:09:06" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __stop_gateway - 241 - The gateway has been stopped."
+""2021-11-10 17:13:01" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 76 - Gateway starting..."
+""2021-11-10 17:13:01" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 81 - ThingsBoard IoT gateway version: 2.8"
+""2021-11-10 17:13:02" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import MqttConnector from /usr/lib/python3/dist-packages/thingsboard_gateway/connectors/mqtt."
+""2021-11-10 17:13:02" - |WARNING| - [tb_gateway_service.py] - tb_gateway_service - _connect_with_connectors - 352 - Connector implementation not found for BLE Connector"
+""2021-11-10 17:13:02" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __init__ - 147 - Gateway started."
+""2021-11-10 17:13:02" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import JsonMqttUplinkConverter from /usr/lib/python3/dist-packages/thingsboard_gateway/connectors/mqtt."
+""2021-11-10 17:13:02" - |INFO| - [tb_loader.py] - tb_loader - import_module - 66 - Import CustomMqttUplinkConverter from /var/lib/thingsboard_gateway/extensions/mqtt."
+""2021-11-10 17:13:11" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __stop_gateway - 238 - Stopping..."
+""2021-11-10 17:13:12" - |INFO| - [tb_gateway_service.py] - tb_gateway_service - __stop_gateway - 241 - The gateway has been stopped."
