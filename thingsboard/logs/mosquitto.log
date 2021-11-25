@@ -1,0 +1,62 @@
+  GNU nano 2.9.3                                                                                  mosquitto.log                                                                                   Modified  
+
+1635255000: mosquitto version 2.0.12 starting
+1635255000: Config loaded from /etc/mosquitto/mosquitto.conf.
+1635255000: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1635255000: Create a configuration file which defines a listener to allow remote access.
+1635255000: For more details see https://mosquitto.org/documentation/authentication-methods/
+1635255000: Opening ipv4 listen socket on port 1883.
+1635255000: Error: Address already in use
+1635255000: Opening ipv6 listen socket on port 1883.
+1635255000: Error: Address already in use
+1635255000: mosquitto version 2.0.12 starting
+1635255000: Config loaded from /etc/mosquitto/mosquitto.conf.
+1635255000: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1635255000: Create a configuration file which defines a listener to allow remote access.
+1635255000: For more details see https://mosquitto.org/documentation/authentication-methods/
+1635255000: Opening ipv4 listen socket on port 1883.
+1635255000: Error: Address already in use
+1635255000: Opening ipv6 listen socket on port 1883.
+1635255000: Error: Address already in use
+1635255000: mosquitto version 2.0.12 starting
+1635255000: Config loaded from /etc/mosquitto/mosquitto.conf.
+1635255000: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1635255000: Create a configuration file which defines a listener to allow remote access.
+1635255000: For more details see https://mosquitto.org/documentation/authentication-methods/
+1635255000: Opening ipv4 listen socket on port 1883.
+1635255000: Error: Address already in use
+1635255000: Opening ipv6 listen socket on port 1883.
+1635255000: Error: Address already in use
+1635255001: mosquitto version 2.0.12 starting
+1635255001: Config loaded from /etc/mosquitto/mosquitto.conf.
+1635255001: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1635255001: Create a configuration file which defines a listener to allow remote access.
+1635255001: For more details see https://mosquitto.org/documentation/authentication-methods/
+1635255001: Opening ipv4 listen socket on port 1883.
+1635255001: Error: Address already in use
+1635255001: Opening ipv6 listen socket on port 1883.
+1635255001: Error: Address already in use
+1635255001: mosquitto version 2.0.12 starting
+1635255001: Config loaded from /etc/mosquitto/mosquitto.conf.
+1635255001: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1635255001: Create a configuration file which defines a listener to allow remote access.
+1635255001: For more details see https://mosquitto.org/documentation/authentication-methods/
+1635255001: Opening ipv4 listen socket on port 1883.
+1635255001: Error: Address already in use
+1635255001: Opening ipv6 listen socket on port 1883.
+1635255001: Error: Address already in use
+1635255001: mosquitto version 2.0.12 starting
+1635255001: Config loaded from /etc/mosquitto/mosquitto.conf.
+1635255001: Starting in local only mode. Connections will only be possible from clients running on this machine.
+1635255001: Create a configuration file which defines a listener to allow remote access.
+1635255001: For more details see https://mosquitto.org/documentation/authentication-methods/
+1635255001: Opening ipv4 listen socket on port 1883.
+1635255001: Error: Address already in use
+1635255001: Opening ipv6 listen socket on port 1883.
+1635255001: Error: Address already in use
+1635255001: mosquitto version 2.0.12 starting
+1635255001: Config loaded from /etc/mosquitto/mosquitto.conf.
+1635255001: Starting in local only mode. Connections will only be possible from clients running on this machine.
+
+^G Get Help      ^O Write Out     ^W Where Is      ^K Cut Text      ^J Justify       ^C Cur Pos       M-U Undo         M-A Mark Text    M-] To Bracket   M-▲ Previous     ^B Back          ^◀ Prev Word
+^X Exit          ^R Read File     ^\ Replace       ^U Uncut Text    ^T To Spell      ^_ Go To Line    M-E Redo         M-6 Copy Text    M-W WhereIs Next M-▼ Next         ^F Forward       ^▶ Next Word
