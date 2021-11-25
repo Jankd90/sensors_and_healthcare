@@ -7,7 +7,7 @@
     "devices": [
         {
             "name": "environmental device 35-1",
-            "MACAddress": "9C:58:5B:C8:10:03",
+            "MACAddress": "C9:58:5B:C8:10:03",
             "telemetry": [
                 {
                     "key": "temperatuur",
