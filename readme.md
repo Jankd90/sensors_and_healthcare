@@ -6,10 +6,19 @@ In this repo you can find all the building blocks for setting up monitoring with
 
 1. Install InfluxDB:
 
+Thanks to https://simonhearne.com/
+
     ```sh
     wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -
     source /etc/os-release
     echo "deb https://repos.influxdata.com/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+    
+    sudo apt update && sudo apt install -y influxdb
+
+    sudo systemctl unmask influxdb.service
+    sudo systemctl start influxdb
+    sudo systemctl enable influxdb.service
+
     ```
 2. Create a Database:
 
@@ -51,5 +60,28 @@ python3 annotation_app.py
 ```sh
 python3 ble_central.py
 ```
+
+## Optional, install Grafana
+
+Thanks to https://simonhearne.com/
+
+    ```sh
+    wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+    echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee /etc/apt/sources.list.d/grafana.list
+    sudo apt update && sudo apt install -y grafana
+    sudo systemctl unmask grafana-server.service
+    sudo systemctl start grafana-server
+    sudo systemctl enable grafana-server.service
+    ```
+
+## Install docker
+    ```sh
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    sudo bash get-docker.sh
+    touch Dockerfile
+    touch .dockerignore
+    docker build .
+    ```
+
 
 
