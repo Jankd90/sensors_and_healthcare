@@ -41,5 +41,15 @@ chmod 400 host.key
 openssl req -new -x509 -nodes -sha256 -days 365 -key host.key -out host.cert
 ```
 
+## Run both aplications
+
+1. Run server in terminal
+```sh
+python3 annotation_app.py
+```
+2. Run BLE_central in terminal
+```sh
+python3 annotation_app.py
+```
 
 
