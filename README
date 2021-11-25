@@ -2,7 +2,7 @@
 
 In this repo you can find all the building blocks for setting up monitoring with environmental sensors and starting an annotation app. 
 
-Here you can find the prerequisits to start the project:
+## Prerequisits to start the project:
 
 1. Install InfluxDB:
 
@@ -40,5 +40,6 @@ openssl genrsa 2048 > host.key
 chmod 400 host.key
 openssl req -new -x509 -nodes -sha256 -days 365 -key host.key -out host.cert
 ```
+
 
 
