@@ -1,8 +1,9 @@
+import time
 from bluepy import btle
 import struct, os
 from concurrent import futures
 import sys
-
+from influxdb import InfluxDBClient
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv())
 
@@ -21,6 +22,13 @@ char_uuid4 = "19b10015-e8f2-537e-4f6c-d104768a1214"
 char_uuid5 = "19b10016-e8f2-537e-4f6c-d104768a1214"
 char_uuid6 = "19b10017-e8f2-537e-4f6c-d104768a1214"  
 
+delegate_global = []
+perif_global = []
+[delegate_global.append(0) for ii in range(len(addr_var))]
+[perif_global.append(0) for ii in range(len(addr_var))]
+
+client = InfluxDBClient('localhost', 8086, 'root', 'root', 'db1')
+
 class MyDelegate(btle.DefaultDelegate):
 
     def __init__(self,params):
@@ -28,27 +36,46 @@ class MyDelegate(btle.DefaultDelegate):
 
     def handleNotification(self,cHandle,data):
         global addr_var
+        global client
         global delegate_global
-        #print(data)
-        print(int.from_bytes(data, byteorder=sys.byteorder),cHandle)
+        #print(int.from_bytes(data, byteorder=sys.byteorder),cHandle)
         for ii in range(len(addr_var)):
             if delegate_global[ii]==self:
-                try:
-                    data_decoded = struct.unpack("b",data)
-                    perif_global[ii].writeCharacteristic(cHandle,struct.pack("b",55))
-                    #print("Address: "+addr_var[ii])
+                print("Address: "+addr_var[ii])
+                adr = "{0}:{1}".format(addr_var[ii],cHandle) 
+                timestamp = int(time.time()*1000000000)
+                value = int.from_bytes(data, byteorder=sys.byteorder)
+                json_body = [
+                    {
+                        "measurement": adr,
+                        "tags": {
+                            "host": "server01",
+                            "region": "assen"
+                        },
+                        "time": timestamp,
+                        "fields": {
+                            "value": value
+                        }
+                    }
+                    ]
+                    
+                client.write_points(json_body)
+              #  try:
+                    #data_decoded = struct.unpack("b",data)
+                    #perif_global[ii].writeCharacteristic(cHandle,struct.pack("b",55))
+                #print("Address: "+addr_var[ii])
                     #print(data_decoded)
-                    return
-                except:                    
-                    pass
-                try:
-                    data_decoded = data.decode('utf-8')
-                    perif_global[ii].writeCharacteristic(cHandle,struct.pack("b",55))
-                    #print("Address: "+addr_var[ii])
+              #      return
+              #  except:                    
+              #      pass
+              #  try:
+                    #data_decoded = data.decode('utf-8')
+                    #perif_global[ii].writeCharacteristic(cHandle,struct.pack("b",55))
+             #       print("Address: "+addr_var[ii])
                     #print(data_decoded)
-                    return
-                except:
-                    return
+              #      return
+               # except:
+                #    return
 
     
 def perif_loop(perif,indx):
@@ -63,7 +90,7 @@ def perif_loop(perif,indx):
             
 
             if perif.waitForNotifications(1):
-                print("waiting for notifications...")
+                #print("waiting for notifications...")
                 continue
         except:
             try:
@@ -73,10 +100,7 @@ def perif_loop(perif,indx):
             print("disconnecting perif: "+perif.addr+", index: "+str(indx))
             reestablish_connection(perif,perif.addr,indx)
             
-delegate_global = []
-perif_global = []
-[delegate_global.append(0) for ii in range(len(addr_var))]
-[perif_global.append(0) for ii in range(len(addr_var))]
+
 
 def reestablish_connection(perif,addr,indx):
     while True:

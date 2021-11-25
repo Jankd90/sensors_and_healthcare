@@ -49,7 +49,7 @@ python3 annotation_app.py
 ```
 2. Run BLE_central in terminal
 ```sh
-python3 annotation_app.py
+python3 ble_central.py
 ```
 
 
