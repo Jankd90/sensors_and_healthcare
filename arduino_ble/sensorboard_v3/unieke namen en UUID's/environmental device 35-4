@@ -31,12 +31,12 @@ typedef struct colorStruct{
 BLEService sensorService("19B10010-E8F2-537E-4F6C-D104768A1214"); // create service
 
 //Characteristics for sensor values
-BLEIntCharacteristic tempCharacteristic("19B10029-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //temperature
-BLEIntCharacteristic humCharacteristic("19B10030-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //humidity
-BLEIntCharacteristic pressCharacteristic("19B10031-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //pressure
-BLEIntCharacteristic col_rgCharacteristic("19B10032-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //colour (Red Green)
-BLEIntCharacteristic col_bcCharacteristic("19B10033-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //colour (Blue Clear)
-BLEIntCharacteristic dbaCharacteristic("19B10034-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //sound (DB(A))
+BLEIntCharacteristic tempCharacteristic("19B10030-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //temperature
+BLEIntCharacteristic humCharacteristic("19B10031-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //humidity
+BLEIntCharacteristic pressCharacteristic("19B10032-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //pressure
+BLEIntCharacteristic col_rgCharacteristic("19B10033-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //colour (Red Green)
+BLEIntCharacteristic col_bcCharacteristic("19B10034-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //colour (Blue Clear)
+BLEIntCharacteristic dbaCharacteristic("19B10035-E8F2-537E-4F6C-D104768A1214", BLERead | BLENotify); //sound (DB(A))
 
 //declarations for sensor variables
 short sampleBuffer[256];
