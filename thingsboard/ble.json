@@ -6,23 +6,45 @@
     "passiveScanMode": true,
     "devices": [
         {
-            "name": "Temperature and humidity sensor",
-            "MACAddress": "4C:65:A8:DF:85:C0",
+            "name": "environmental device 35-1",
+            "MACAddress": "9C:58:5B:C8:10:03",
             "telemetry": [
                 {
-                    "key": "temperature",
+                    "key": "temperatuur",
                     "method": "notify",
-                    "characteristicUUID": "226CAA55-6476-4566-7562-66734470666D",
+                    "characteristicUUID": "19B10012-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 2,
                     "byteTo": 6
                 },
                 {
-                    "key": "humidity",
+                    "key": "luchtvochtigheid",
                     "method": "notify",
-                    "characteristicUUID": "226CAA55-6476-4566-7562-66734470666D",
+                    "characteristicUUID": "19B10013-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "luchtdruk",
+                    "method": "notify",
+                    "characteristicUUID": "19B10014-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "RGB kleuren",
+                    "method": "notify",
+                    "characteristicUUID": "19B10015-E8F2-537E-4F6C-D104768A1214",
+                    "byteFrom": 9,
+                    "byteTo": 13
+                },
+                {
+                    "key": "geluidssterkte",
+                    "method": "notify",
+                    "characteristicUUID": "19B10016-E8F2-537E-4F6C-D104768A1214",
                     "byteFrom": 9,
                     "byteTo": 13
                 }
+
             ],
             "attributes": [
                 {
@@ -50,4 +72,3 @@
         }
     ]
 }
-
