@@ -13,7 +13,7 @@ global addr_var
 global delegate_global
 global perif_global
 #https://simonhearne.com/2020/pi-influx-grafana/
-addr_var = ['a2:07:f1:8f:60:43']
+addr_var = ['a2:07:f1:8f:60:43', 'ee:85:31:d8:af:ea']
 CHARACTERISTIC_UUID = "19b10012-e8f2-537e-4f6c-d104768a1214"
 char_uuid = "19b10012-e8f2-537e-4f6c-d104768a1214"
 char_uuid2 = "19b10013-e8f2-537e-4f6c-d104768a1214" 
@@ -34,6 +34,24 @@ class MyDelegate(btle.DefaultDelegate):
     def __init__(self,params):
         btle.DefaultDelegate.__init__(self)
 
+    def write_to_db(self, adr, value):
+        timestamp = int(time.time()*1000000000)
+        #print("Address: "+adr)
+        json_body = [
+            {
+            "measurement": adr,
+            "tags": {
+            "host": "server01",
+            "region": "assen"
+            },
+            "time": timestamp,
+            "fields": {
+            "value": value
+            }
+            }
+            ]
+        client.write_points(json_body)
+
     def handleNotification(self,cHandle,data):
         global addr_var
         global client
@@ -41,25 +59,22 @@ class MyDelegate(btle.DefaultDelegate):
         #print(int.from_bytes(data, byteorder=sys.byteorder),cHandle)
         for ii in range(len(addr_var)):
             if delegate_global[ii]==self:
-                print("Address: "+addr_var[ii])
-                adr = "{0}:{1}".format(addr_var[ii],cHandle) 
-                timestamp = int(time.time()*1000000000)
-                value = int.from_bytes(data, byteorder=sys.byteorder)
-                json_body = [
-                    {
-                        "measurement": adr,
-                        "tags": {
-                            "host": "server01",
-                            "region": "assen"
-                        },
-                        "time": timestamp,
-                        "fields": {
-                            "value": value
-                        }
-                    }
-                    ]
-                    
-                client.write_points(json_body)
+                
+                if cHandle == 21 or cHandle == 24:
+                    adr = "{0}:{1}".format(addr_var[ii],cHandle-1) 
+                    value = int.from_bytes(data[:2], byteorder=sys.byteorder)
+                    self.write_to_db(adr, value)
+                    adr = "{0}:{1}".format(addr_var[ii],cHandle+1) 
+                    value = int.from_bytes(data[2:], byteorder=sys.byteorder)
+                    self.write_to_db(adr, value)
+                else:
+                    adr = "{0}:{1}".format(addr_var[ii],cHandle) 
+                    value = int.from_bytes(data, byteorder=sys.byteorder)
+                    self.write_to_db(adr, value)
+                
+                
+                
+                
               #  try:
                     #data_decoded = struct.unpack("b",data)
                     #perif_global[ii].writeCharacteristic(cHandle,struct.pack("b",55))
@@ -80,15 +95,7 @@ class MyDelegate(btle.DefaultDelegate):
     
 def perif_loop(perif,indx):
     while True:
-        #print(c.read())
-        #print(c2.read())
-        #print(c3.read())
-        
-            
-        #print(char.read(), 'ac')
         try:
-            
-
             if perif.waitForNotifications(1):
                 #print("waiting for notifications...")
                 continue
@@ -107,10 +114,37 @@ def reestablish_connection(perif,addr,indx):
         try:
             print("trying to reconnect with "+addr)
             perif.connect(addr)
+            setup_notifications(perif)
             print("re-connected to "+addr+", index = "+str(indx))
             return
         except:
             continue
+
+                    
+def setup_notifications(p):
+    characteristics = p.getCharacteristics()
+    for char in characteristics:
+        if(char.uuid == char_uuid ):  
+            c = char
+        if(char.uuid == char_uuid2 ):
+            c2 = char
+        if(char.uuid == char_uuid3 ):
+            c3 = char
+        if(char.uuid == char_uuid4 ):
+            c4 = char
+        if(char.uuid == char_uuid5 ):
+            c5 = char
+        if(char.uuid == char_uuid6 ):
+            c6 = char
+                      
+    setup_data = b"\x01\x00"
+    p.writeCharacteristic(c.valHandle + 1, setup_data)
+    p.writeCharacteristic(c2.valHandle + 1, setup_data)
+    p.writeCharacteristic(c3.valHandle + 1, setup_data)
+    p.writeCharacteristic(c4.valHandle + 1, setup_data)  
+    p.writeCharacteristic(c5.valHandle + 1, setup_data)  
+    p.writeCharacteristic(c6.valHandle + 1, setup_data)  
+
 
 def establish_connection(addr):
     global delegate_global
@@ -128,37 +162,8 @@ def establish_connection(addr):
                     delegate_global[jj] = p_delegate
                     p.withDelegate(p_delegate)
                     print("Connected to "+addr+" at index: "+str(jj))
-                    characteristics = p.getCharacteristics()
-
-                    #svc = p.getServiceByUUID(service_uuid)
-                    #ch = svc.getCharacteristics(char_uuid)[0]
-                    #ch2 = svc.getCharacteristics(char_uuid2)[0]
-
-            #print(characteristics)
-                    for char in characteristics:
-                        if(char.uuid == char_uuid ):  
-                            c = char
-                        if(char.uuid == char_uuid2 ):
-                            c2 = char
-                        if(char.uuid == char_uuid3 ):
-                            c3 = char
-                        if(char.uuid == char_uuid4 ):
-                            c4 = char
-                        if(char.uuid == char_uuid5 ):
-                            c5 = char
-                        if(char.uuid == char_uuid6 ):
-                            c6 = char
-                      
-                    setup_data = b"\x01\x00"
-                    p.writeCharacteristic(c.valHandle + 1, setup_data)
-                    p.writeCharacteristic(c2.valHandle + 1, setup_data)
-                    p.writeCharacteristic(c3.valHandle + 1, setup_data)
-                    p.writeCharacteristic(c4.valHandle + 1, setup_data)  
-                    p.writeCharacteristic(c5.valHandle + 1, setup_data)  
-                    p.writeCharacteristic(c6.valHandle + 1, setup_data)      
-
+                    setup_notifications(p)
                     perif_loop(p,jj)
-                    print('test')
         except:
             print("failed to connect to "+addr)
             continue
